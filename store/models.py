@@ -31,7 +31,7 @@ class Order(models.Model):
     products=models.ManyToManyField(Product,through='OrderProduct')
     # protect prevent deleting the child records if parent record deleted
     customer=models.ForeignKey(Customer,on_delete=models.PROTECT)
-class OrderProduct(models.model):
+class OrderProduct(models.Model):
     product=models.ForeignKey(Product,on_delete=models.PROTECT)
     order=models.ForeignKey(Order,on_delete=models.PROTECT)
     quantity=models.PositiveIntegerField()
