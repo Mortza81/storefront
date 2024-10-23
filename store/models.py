@@ -2,6 +2,7 @@ from django.db import models
 class Collection(models.Model):
     title=models.CharField(max_length=255,unique=True)
 class Product(models.Model):
+    slug=models.SlugField(null=True)
     title=models.CharField(max_length=255)
     inventory=models.PositiveIntegerField()
     price=models.PositiveIntegerField()
